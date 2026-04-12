@@ -361,8 +361,8 @@ if (loading) {
             &lt;/&gt; Portfolio
           </div>
           <div className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <FaTimes /> : <FaBars />}
-          </div>
+  {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+</div>
           <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
             <li><a onClick={() => scrollToSection('home')}>Home</a></li>
             <li><a onClick={() => scrollToSection('about')}>About</a></li>
@@ -453,23 +453,31 @@ Driven by curiosity and innovation, I continuously learn new technologies and ai
               </div>
             </div>
             <div>
-              <div className="education-card">
-                <h3>🎓 Education</h3>
-                <p><strong>B.Tech in Computer Science Engineering</strong><br />Jawaharlal Nehru Technological University Anantapur College Of Engineering(JNTUACEA),Ananthapuramu, 2023-2027<br />CGPA: 9.18/10</p>
-                <p style={{ marginTop: '1rem' }}><strong>Intermediate (Higher Secondary Education)</strong><br />Sri Vikas Junior College,Vinjamur, 2021-2023<br />Percentage: 98%</p>
-              </div>
-              <div className="education-card">
-                <h3>💼 What I Do</h3>
+              <div className="education-card" style={{ backgroundColor: darkMode ? '#2d2d2d' : '#f5f5f5' }}>
+  <h3 style={{ color: darkMode ? '#667eea' : '#333' }}>🎓 Education</h3>
+  <p style={{ color: darkMode ? '#ccc' : '#666' }}>
+    <strong style={{ color: darkMode ? 'white' : '#333' }}>B.Tech in Computer Science Engineering</strong><br />
+    Jawaharlal Nehru Technological University Anantapur College Of Engineering (JNTUACEA), Ananthapuramu, 2023-2027<br />
+    CGPA: 9.18/10
+  </p>
+  <p style={{ color: darkMode ? '#ccc' : '#666', marginTop: '1rem' }}>
+    <strong style={{ color: darkMode ? 'white' : '#333' }}>Intermediate (Higher Secondary Education)</strong><br />
+    Sri Vikas Junior College, Vinjamur, 2021-2023<br />
+    Percentage: 98%
+  </p>
+</div>
 
-<p>
-✓ Create end-to-end web applications from concept to deployment<br />
-✓ Convert complex requirements into simple, functional solutions<br />
-✓ Design modern, responsive, and user-centric interfaces<br />
-✓ Build robust backend systems with efficient data handling<br />
-✓ Apply problem-solving skills to develop optimized solutions<br />
-✓ Continuously learn and evolve towards AI-powered development
-</p>              </div>
-            </div>
+<div className="education-card" style={{ backgroundColor: darkMode ? '#2d2d2d' : '#f5f5f5' }}>
+  <h3 style={{ color: darkMode ? '#667eea' : '#333' }}>💼 What I Do</h3>
+  <p style={{ color: darkMode ? '#ccc' : '#666', lineHeight: '1.8' }}>
+    ✓ Create end-to-end web applications from concept to deployment<br />
+    ✓ Convert complex requirements into simple, functional solutions<br />
+    ✓ Design modern, responsive, and user-centric interfaces<br />
+    ✓ Build robust backend systems with efficient data handling<br />
+    ✓ Apply problem-solving skills to develop optimized solutions<br />
+    ✓ Continuously learn and evolve towards AI-powered development
+  </p>
+</div>            </div>
           </div>
         </div>
       </section>

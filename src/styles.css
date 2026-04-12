@@ -79,6 +79,7 @@ body {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    z-index: 1000;
 }
 
 /* Sections */
@@ -290,14 +291,12 @@ section {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
-/* Updated Skills Grid - 3 columns on desktop, 2 on tablet, 1 on mobile */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
 }
 
-/* Make skill categories more compact for better layout */
 .skill-category {
     background: white;
     padding: 1.5rem;
@@ -317,7 +316,6 @@ section {
     padding-bottom: 0.5rem;
 }
 
-/* Adjust skill item spacing */
 .skill-item {
     margin-bottom: 1rem;
 }
@@ -334,6 +332,7 @@ section {
     font-size: 1.1rem;
     color: #667eea;
 }
+
 .skill-bar {
     height: 10px;
     background: #e0e0e0;
@@ -433,116 +432,12 @@ section {
     color: #764ba2;
     transform: translateX(5px);
 }
+
 /* Certifications Section */
 .certifications {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
-.certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.certification-card {
-    background: white;
-    border-radius: 20px;
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.certification-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-}
-
-.certification-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
-
-.certification-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.certification-card h3 {
-    font-size: 1.3rem;
-    color: #333;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.cert-issuer {
-    color: #667eea;
-    font-weight: 600;
-    margin-bottom: 0.3rem;
-}
-
-.cert-date {
-    color: #888;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
-
-.cert-description {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-}
-
-.cert-link {
-    display: inline-block;
-    color: #667eea;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    background: #f0f0f0;
-}
-
-.cert-link:hover {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    transform: translateX(5px);
-}
-
-/* Dark mode styles for certifications */
-body.dark-mode .certification-card {
-    background: #2d2d2d;
-}
-
-body.dark-mode .certification-card h3 {
-    color: white;
-}
-
-body.dark-mode .cert-description {
-    color: #ccc;
-}
-
-body.dark-mode .cert-link {
-    background: #3d3d3d;
-    color: #667eea;
-}
-
-body.dark-mode .cert-link:hover {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-}
-
-/* Certifications Gallery */
 .cert-subtitle {
     text-align: center;
     color: #666;
@@ -622,6 +517,46 @@ body.dark-mode .cert-link:hover {
     color: #667eea;
     font-size: 0.9rem;
     font-weight: 500;
+}
+
+/* Category Tabs */
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.category-tab {
+    padding: 0.8rem 1.5rem;
+    background: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #667eea;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.category-tab:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.category-tab.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.cert-count {
+    text-align: center;
+    margin-top: 2rem;
+    color: #666;
+    font-size: 0.9rem;
 }
 
 /* Modal Styles */
@@ -766,110 +701,6 @@ body.dark-mode .cert-link:hover {
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
-/* Dark mode styles */
-body.dark-mode .cert-gallery-card {
-    background: #2d2d2d;
-}
-
-body.dark-mode .cert-gallery-title {
-    color: white;
-}
-
-body.dark-mode .modal-content {
-    background: #2d2d2d;
-}
-
-body.dark-mode .modal-details h2 {
-    color: white;
-}
-
-body.dark-mode .info-value,
-body.dark-mode .info-description {
-    color: #ccc;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .modal-body {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-    }
-    
-    .certifications-gallery {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 1rem;
-    }
-    
-    .cert-image-wrapper {
-        height: 200px;
-    }
-}
-/* Category Tabs */
-.category-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-}
-
-.category-tab {
-    padding: 0.8rem 1.5rem;
-    background: white;
-    border: none;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: #667eea;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.category-tab:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-}
-
-.category-tab.active {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-}
-
-.cert-count {
-    text-align: center;
-    margin-top: 2rem;
-    color: #666;
-    font-size: 0.9rem;
-}
-
-/* Dark mode styles for tabs */
-body.dark-mode .category-tab {
-    background: #2d2d2d;
-    color: #667eea;
-}
-
-body.dark-mode .category-tab.active {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-}
-
-body.dark-mode .cert-count {
-    color: #ccc;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .category-tab {
-        padding: 0.5rem 1rem;
-        font-size: 0.85rem;
-    }
-    
-    .category-tabs {
-        gap: 0.5rem;
-    }
-}
 /* Contact Section */
 .contact {
     background: white;
@@ -954,6 +785,7 @@ body.dark-mode .cert-count {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
+
 .status-message {
     text-align: center;
     margin-top: 1rem;
@@ -1082,7 +914,136 @@ body.dark-mode .cert-count {
     z-index: 1000;
     transition: all 0.3s ease;
 }
-/* Dark mode styles for Contact section */
+
+/* ========== DARK MODE STYLES ========== */
+body.dark-mode {
+    background: #1a1a1a;
+}
+
+body.dark-mode .about,
+body.dark-mode .projects,
+body.dark-mode .contact {
+    background: #1a1a1a;
+}
+
+body.dark-mode .section-title {
+    color: #fff;
+}
+
+body.dark-mode .about-text h3,
+body.dark-mode .project-title {
+    color: #fff;
+}
+
+body.dark-mode .about-text p,
+body.dark-mode .project-desc {
+    color: #ccc;
+}
+
+body.dark-mode .stat-card,
+body.dark-mode .education-card,
+body.dark-mode .skill-category,
+body.dark-mode .project-card,
+body.dark-mode .cert-gallery-card {
+    background: #2d2d2d;
+}
+
+body.dark-mode .stat-card .stat-value,
+body.dark-mode .education-card h3,
+body.dark-mode .cert-gallery-title {
+    color: white;
+}
+
+body.dark-mode .stat-card .stat-label {
+    color: #ccc;
+}
+
+/* Dark Mode Navigation */
+body.dark-mode .navbar {
+    background: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+body.dark-mode .nav-links a {
+    color: #ffffff;
+}
+
+body.dark-mode .nav-links a:hover {
+    color: #667eea;
+}
+
+body.dark-mode .menu-btn {
+    color: white;
+}
+
+/* Dark Mode Mobile Menu */
+@media (max-width: 968px) {
+    body.dark-mode .nav-links {
+        background: #2d2d2d;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    
+    body.dark-mode .nav-links a {
+        color: white;
+    }
+    
+    body.dark-mode .nav-links a:hover {
+        background: #3d3d3d;
+        color: #667eea;
+    }
+}
+
+/* Dark Mode Certifications */
+body.dark-mode .certifications {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+body.dark-mode .cert-subtitle {
+    color: #ccc;
+}
+
+body.dark-mode .cert-gallery-card {
+    background: #2d2d2d;
+}
+
+body.dark-mode .cert-gallery-title {
+    color: white;
+}
+
+body.dark-mode .cert-gallery-issuer {
+    color: #667eea;
+}
+
+/* Dark Mode Category Tabs */
+body.dark-mode .category-tab {
+    background: #2d2d2d;
+    color: #667eea;
+}
+
+body.dark-mode .category-tab.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+body.dark-mode .cert-count {
+    color: #ccc;
+}
+
+/* Dark Mode Modal */
+body.dark-mode .modal-content {
+    background: #2d2d2d;
+}
+
+body.dark-mode .modal-details h2 {
+    color: white;
+}
+
+body.dark-mode .info-value,
+body.dark-mode .info-description {
+    color: #ccc;
+}
+
+/* Dark Mode Contact */
 body.dark-mode .contact-info h3 {
     color: white;
 }
@@ -1092,8 +1053,7 @@ body.dark-mode .contact-info p {
 }
 
 body.dark-mode .contact-item {
-    background: #3d3d3d;
-    color: white;
+    background: #2d2d2d;
 }
 
 body.dark-mode .contact-item h4 {
@@ -1120,94 +1080,58 @@ body.dark-mode .contact-item:hover .contact-icon {
 
 body.dark-mode .form-group input,
 body.dark-mode .form-group textarea {
-    background: #3d3d3d;
-    color: white;
-    border-color: #555;
-}
-
-body.dark-mode .form-group input:focus,
-body.dark-mode .form-group textarea:focus {
-    border-color: #667eea;
-    background: #4d4d4d;
-}
-
-body.dark-mode .form-group input::placeholder,
-body.dark-mode .form-group textarea::placeholder {
-    color: #999;
-}
-/* Complete Dark Mode for Contact Section */
-body.dark-mode .contact {
-    background: #1a1a1a;
-}
-
-body.dark-mode .contact-container .contact-info h3 {
-    color: white;
-}
-
-body.dark-mode .contact-container .contact-info > p {
-    color: #bbb;
-}
-
-body.dark-mode .contact-item {
-    background: #2d2d2d;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-}
-
-body.dark-mode .contact-item h4 {
-    color: white;
-}
-
-body.dark-mode .contact-item p {
-    color: #ccc;
-}
-
-body.dark-mode .contact-item .contact-icon {
-    color: #667eea;
-}
-
-body.dark-mode .contact-item:hover {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-body.dark-mode .contact-item:hover h4,
-body.dark-mode .contact-item:hover p,
-body.dark-mode .contact-item:hover .contact-icon {
-    color: white;
-}
-
-/* Form elements in dark mode */
-body.dark-mode .contact-form .form-group input,
-body.dark-mode .contact-form .form-group textarea {
     background: #2d2d2d;
     color: white;
     border: 2px solid #444;
 }
 
-body.dark-mode .contact-form .form-group input:focus,
-body.dark-mode .contact-form .form-group textarea:focus {
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus {
     border-color: #667eea;
     background: #3d3d3d;
-    outline: none;
 }
 
-body.dark-mode .contact-form .form-group input::placeholder,
-body.dark-mode .contact-form .form-group textarea::placeholder {
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
     color: #888;
 }
 
-body.dark-mode .submit-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-}
-
-body.dark-mode .submit-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-}
-
-/* Responsive */
+/* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 968px) {
+    .menu-btn {
+        display: block;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        transition: left 0.3s ease-in-out;
+        z-index: 999;
+        overflow-y: auto;
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .nav-links li {
+        margin: 1rem 0;
+        text-align: center;
+    }
+    
+    .nav-links a {
+        font-size: 1.2rem;
+        display: block;
+        padding: 0.8rem;
+        border-radius: 10px;
+    }
+    
     .hero {
         flex-direction: column-reverse;
         text-align: center;
@@ -1216,42 +1140,6 @@ body.dark-mode .submit-btn:hover {
     .about-content,
     .contact-container {
         grid-template-columns: 1fr;
-    }
-    
-    .nav-links {
-        display: none;
-    }
-    
-    .nav-links.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 2rem;
-        text-align: center;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-    
-    .menu-btn {
-        display: block;
-    }
-    
-    .timeline::before {
-        left: 30px;
-    }
-    
-    .timeline-content {
-        width: calc(100% - 60px);
-        margin-left: 60px !important;
-    }
-    
-    .timeline-item:nth-child(odd) .timeline-content::before,
-    .timeline-item:nth-child(even) .timeline-content::before {
-        left: -40px;
-        right: auto;
     }
     
     .profile-img {
@@ -1266,46 +1154,129 @@ body.dark-mode .submit-btn:hover {
     .typing-text {
         font-size: 1.5rem;
     }
+    
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .certifications-gallery {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .category-tab {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .category-tabs {
+        gap: 0.5rem;
+    }
+    
+    .modal-body {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .cert-image-wrapper {
+        height: 200px;
+    }
 }
 
-/* Dark Mode Styles */
-body.dark-mode {
-    background: #1a1a1a;
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .typing-text {
+        font-size: 1rem;
+    }
+    
+    .btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .stats {
+        gap: 0.5rem;
+    }
+    
+    .stat-value {
+        font-size: 1rem;
+    }
+    
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
 }
 
-body.dark-mode .about,
-body.dark-mode .projects,
-body.dark-mode .contact {
-    background: #2d2d2d;
+@media (min-width: 769px) and (max-width: 1024px) {
+    .projects-grid,
+    .certifications-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .profile-img {
+        width: 280px;
+        height: 280px;
+    }
+}
+/* Education Cards Dark Mode Fix */
+body.dark-mode .education-card {
+    background: #2d2d2d !important;
+    color: white !important;
 }
 
-body.dark-mode .section-title {
-    color: #fff;
+body.dark-mode .education-card h3 {
+    color: #667eea !important;
 }
 
-body.dark-mode .about-text h3,
-body.dark-mode .project-title {
-    color: #fff;
+body.dark-mode .education-card p {
+    color: #ccc !important;
 }
 
-body.dark-mode .about-text p,
-body.dark-mode .project-desc {
-    color: #ccc;
+body.dark-mode .education-card strong {
+    color: white !important;
 }
 
-body.dark-mode .stat-card,
-body.dark-mode .education-card,
-body.dark-mode .skill-category,
-body.dark-mode .project-card,
-body.dark-mode .timeline-content {
-    background: #3d3d3d;
-    color: #fff;
+body.dark-mode .about-text h3 {
+    color: white !important;
 }
 
-body.dark-mode .navbar {
-    background: rgba(45,45,45,0.95);
+body.dark-mode .about-text p {
+    color: #ccc !important;
 }
 
-body.dark-mode .nav-links a {
-    color: #fff;
+body.dark-mode .about {
+    background: #1a1a1a !important;
+}
+
+body.dark-mode .stats .stat-card {
+    background: #2d2d2d !important;
+}
+
+body.dark-mode .stats .stat-value {
+    color: white !important;
+}
+
+body.dark-mode .stats .stat-label {
+    color: #ccc !important;
+}
+
+body.dark-mode .stats .stat-icon {
+    color: #667eea !important;
 }
