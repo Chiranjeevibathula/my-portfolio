@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/my-portfolio/static/css/main.726d0026.css",
-    "main.js": "/my-portfolio/static/js/main.92e8dce2.js",
+    "main.js": "/my-portfolio/static/js/main.28087a21.js",
     "static/media/income.png": "/my-portfolio/static/media/income.adb700e6a27a1ac6d6e0.png",
     "static/media/cert9.png": "/my-portfolio/static/media/cert9.edd94f375cde8604ab1f.png",
     "static/media/leave.png": "/my-portfolio/static/media/leave.52f3bc4f9ec47f34b7df.png",
@@ -17,6 +17,7 @@
     "static/media/cert4.png": "/my-portfolio/static/media/cert4.7b198cb26a8ff0af700e.png",
     "static/media/cert12.png": "/my-portfolio/static/media/cert12.8df0a3601b8fce3e6e5a.png",
     "static/media/cert16.jpeg": "/my-portfolio/static/media/cert16.f74481f8aab8a9dce191.jpeg",
+    "static/media/RESUME.pdf": "/my-portfolio/static/media/RESUME.ea9c4b9d7288fa0dcd1d.pdf",
     "static/media/cert10.png": "/my-portfolio/static/media/cert10.c48ca6c57a1781ee633e.png",
     "static/media/cert15.jpeg": "/my-portfolio/static/media/cert15.036bd13a8bf5a3979f40.jpeg",
     "static/media/cert8.png": "/my-portfolio/static/media/cert8.f8ccad6c7c46ebfaf8f8.png",
@@ -25,10 +26,10 @@
     "static/media/cert7.png": "/my-portfolio/static/media/cert7.cbd4d9d71c131a3e5b56.png",
     "index.html": "/my-portfolio/index.html",
     "main.726d0026.css.map": "/my-portfolio/static/css/main.726d0026.css.map",
-    "main.92e8dce2.js.map": "/my-portfolio/static/js/main.92e8dce2.js.map"
+    "main.28087a21.js.map": "/my-portfolio/static/js/main.28087a21.js.map"
   },
   "entrypoints": [
     "static/css/main.726d0026.css",
-    "static/js/main.92e8dce2.js"
+    "static/js/main.28087a21.js"
   ]
 }
