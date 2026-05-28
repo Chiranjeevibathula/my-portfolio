@@ -1,25 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  FaGithub, FaLinkedin, FaTwitter, FaInstagram, 
-  FaDownload, FaEnvelope, FaPhone, FaMapMarkerAlt,
-  FaReact, FaNodeJs, FaPython, FaDatabase, FaGitAlt,
-  FaHtml5, FaJs, FaJava, FaAward,
-  FaBriefcase, FaBars, FaTimes, FaExternalLinkAlt,
-  FaSun, FaMoon, FaArrowUp, FaCode
+import {
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+  FaDownload,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaAward,
+  FaBars,
+  FaTimes,
+  FaExternalLinkAlt,
+  FaSun,
+  FaMoon,
+  FaArrowUp,
+  FaCode
 } from 'react-icons/fa';
-import { SiTailwindcss, SiMongodb, SiExpress, SiPostgresql } from 'react-icons/si';
 
 import profilePic from './profile.jpeg';
 import emailjs from '@emailjs/browser';
 import resumeFile from './RESUME.pdf';
-// Import all certificates (PDF and images)
+
 import cert1 from './certificates/cert1.png';
 import cert2 from './certificates/cert2.png';
 import cert3 from './certificates/cert3.png';
 import cert4 from './certificates/cert4.png';
 import cert5 from './certificates/cert5.png';
-import cert6 from './certificates/cert6.png';
 import cert7 from './certificates/cert7.png';
 import cert8 from './certificates/cert8.png';
 import cert9 from './certificates/cert9.png';
@@ -30,6 +37,14 @@ import cert13 from './certificates/cert13.jpeg';
 import cert14 from './certificates/cert14.jpeg';
 import cert15 from './certificates/cert15.jpeg';
 import cert16 from './certificates/cert16.jpeg';
+
+const roles = [
+  "AI Automation & GenAI Developer",
+  "Full Stack SaaS Builder",
+  "Building RAG Systems & AI Agents",
+  "BTech Computer Science Student",
+  "Creating Real-World AI Solutions 🚀"
+];
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -45,14 +60,8 @@ function App() {
 const [selectedCert, setSelectedCert] = useState(null);
 const [modalOpen, setModalOpen] = useState(false);
 const [activeCategory, setActiveCategory] = useState('cryptography');
+const [activeProjectCategory, setActiveProjectCategory] = useState('All');
 
-  const roles = [
-  "Full Stack Developer",
-  "BTech CSE Student",
-  "Building Real-World Web Applications",
-  "Aspiring Tech Entrepreneur 🚀",
-  "Problem Solver & DSA Enthusiast"
-];
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000);
     
@@ -91,7 +100,7 @@ const [activeCategory, setActiveCategory] = useState('cryptography');
         setTimeout(() => setIsDeleting(true), 2000);
       }
     }
-  }, [charIndex, isDeleting, textIndex, roles]);
+  }, [charIndex, isDeleting, textIndex]);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -152,39 +161,172 @@ const [activeCategory, setActiveCategory] = useState('cryptography');
   }
 };
     const projects = [
-    {
-      title: 'Income Tax Management System',
-      description: 'A full-stack web application designed to calculate and manage employee income tax efficiently, providing detailed tax breakdowns based on income, deductions, and allowances with an intuitive user interface.',
-      image: require('./income.png'),
-      tech: ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS'],
-      github: 'https://github.com/Chirubathula06/income-tax-management-system',
-      live: 'https://incometaxmanagement.wuaze.com/?i=1'
-    },
-    {
-      title: 'Leave Management System',
-    description: 'A web-based system for managing employee leave requests with admin dashboard, approval/rejection workflow, and email notifications with reasons. Includes OTP-based authentication and secure user management.',
+  {
+    title: 'AI Startup Launchpad',
+    description:
+      'Built a full-stack GenAI SaaS MVP that helps founders generate structured startup plans using AI. The platform includes secure authentication, project management, AI-powered startup plan generation, generation history tracking, and persistent user-specific data storage using Supabase and OpenAI.',
+    image: require('./ai-startup-launchpad.png'),
+    tech: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Supabase Auth',
+      'PostgreSQL',
+      'OpenAI API',
+      'GenAI'
+    ],
+    github: 'https://github.com/Chirubathula06/ai-startup-launchpad',
+    live: 'https://ai-startup-launchpad.vercel.app/',
+    category: '🚀 GenAI SaaS'
+  },
+
+  {
+    title: 'RAG-Based AI Knowledge Assistant',
+    description:
+      'Built a Retrieval-Augmented Generation AI assistant using n8n and OpenAI that answers user queries strictly from uploaded documents. The system performs PDF extraction, embedding generation, semantic search, and context-aware response generation using vector databases and conversational memory.',
+    image: require('./rag-ai-assistant.png'),
+    tech: [
+      'n8n',
+      'OpenAI API',
+      'GPT-4o mini',
+      'RAG',
+      'Vector Database',
+      'OpenAI Embeddings',
+      'Semantic Search',
+      'PDF Processing',
+      'AI Agents'
+    ],
+    github: 'https://github.com/Chirubathula06/document-rag-n8n',
+    category: '🤖 RAG / GenAI'
+  },
+
+  {
+    title: 'YouTube Video Learning Assistant',
+    description:
+      'Built an AI-powered learning assistant using n8n, OpenAI, and Qdrant that transforms YouTube videos into interactive learning experiences. The system extracts video transcripts, generates embeddings, performs semantic search using RAG, and provides contextual answers strictly from video knowledge.',
+    image: require('./youtube-learning-assistant.png'),
+    tech: [
+      'n8n',
+      'OpenAI API',
+      'GPT-4o mini',
+      'Qdrant',
+      'RAG',
+      'Vector Database',
+      'Semantic Search',
+      'YouTube Transcript API',
+      'AI Agents'
+    ],
+    github: 'https://github.com/Chirubathula06/youtube-rag-n8n',
+    category: '🤖 RAG / GenAI'
+  },
+  {
+  title: 'Website RAG Chatbot',
+
+  description:
+    'An AI-powered Website Knowledge Assistant that transforms website content into an intelligent chatbot using RAG architecture, semantic search, OpenAI embeddings, and Qdrant vector database. The system crawls websites, stores vectorized knowledge, and generates grounded AI responses directly from website data.',
+
+  image: require('./website-rag-chatbot.png'),
+
+  tech: [
+    'n8n',
+    'OpenAI API',
+    'GPT-4o Mini',
+    'Qdrant',
+    'RAG',
+    'Semantic Search',
+    'Vector DB',
+    'JavaScript'
+  ],
+
+  github: 'https://github.com/Chirubathula06/website-rag-chatbot',
+  category: '🤖 RAG / GenAI',
+},
+
+  {
+    title: 'Telegram AI Assistant Bot',
+    description:
+      'An AI-powered Telegram assistant built using n8n workflow automation and OpenAI GPT-4o mini. The bot receives user messages in real time, processes queries using AI, and generates intelligent contextual responses automatically through Telegram integration.',
+    image: require('./telegram-ai-bot.png'),
+    tech: [
+      'n8n',
+      'OpenAI API',
+      'GPT-4o mini',
+      'Telegram Bot API',
+      'JavaScript',
+      'Workflow Automation'
+    ],
+    github: 'https://github.com/Chirubathula06/n8n-workflows',
+    category: '⚡ AI Automation'
+  },
+
+  {
+    title: 'AI-Powered Email Assistant',
+    description:
+      'Designed and deployed an AI-powered email assistant using n8n and OpenAI GPT-4o mini. The workflow automatically monitors incoming emails, analyzes content, generates professional AI-based replies, and creates Gmail reply drafts with human-in-the-loop verification.',
+    image: require('./ai-email-assistant.png'),
+    tech: [
+      'n8n',
+      'OpenAI API',
+      'GPT-4o mini',
+      'Gmail API',
+      'Workflow Automation',
+      'AI Agents'
+    ],
+    github: 'https://github.com/Chirubathula06/n8n-workflows',
+    category: '⚡ AI Automation'
+  },
+
+  {
+    title: 'Income Tax Management System',
+    description:
+      'A full-stack web application designed to calculate and manage employee income tax efficiently, providing detailed tax breakdowns based on income, deductions, and allowances with an intuitive user interface.',
+    image: require('./income.png'),
+    tech: ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS'],
+    github: 'https://github.com/Chirubathula06/income-tax-management-system',
+    live: 'https://incometaxmanagement.wuaze.com/?i=1',
+    category: '💻 Full Stack'
+  },
+
+  {
+    title: 'Leave Management System',
+    description:
+      'A web-based system for managing employee leave requests with admin dashboard, approval/rejection workflow, and email notifications with reasons. Includes OTP-based authentication and secure user management.',
     image: require('./leave.png'),
     tech: ['PHP', 'MySQL', 'JavaScript', 'PHPMailer'],
-      github: 'https://github.com/Chirubathula06/leave-management-system',
-      live: 'https://leave-management.kesug.com/leave-app/'
-    },
-    {
-      title: 'Municipal Community Complaint System',
-    description: 'A platform for users to report and track complaints with category-wise management, admin dashboard, and notification system. Designed for efficient issue resolution and user engagement.',
+    github: 'https://github.com/Chirubathula06/leave-management-system',
+    live: 'https://leave-management.kesug.com/leave-app/',
+    category: '💻 Full Stack'
+  },
+
+  {
+    title: 'Municipal Community Complaint System',
+    description:
+      'A platform for users to report and track complaints with category-wise management, admin dashboard, and notification system. Designed for efficient issue resolution and user engagement.',
     image: require('./complaint.png'),
     tech: ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS'],
-      github: 'https://github.com/Chirubathula06/municipal-community-complaint-system',
-      live: 'https://municipalcommunitycomplaint.free.nf/?i=1'
-    },
-{
-  title: 'Smart Cultivation System',
-  description: 'A smart agriculture-based web application designed to assist farmers in making better cultivation decisions using data-driven insights. The system helps monitor crop conditions, provides recommendations, and improves productivity through efficient resource management and modern technology integration.',
-  image: require('./cultivation.png'),
-  tech: ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS'],
-  github: 'https://github.com/Chirubathula06/smart-cultivation-system',
-  live: 'https://smart-cultivation.kesug.com/smart_cultivation_system/'
-}
-  ];
+    github: 'https://github.com/Chirubathula06/municipal-community-complaint-system',
+    live: 'https://municipalcommunitycomplaint.free.nf/?i=1',
+    category: '💻 Full Stack'
+  },
+
+  {
+    title: 'Smart Cultivation System',
+    description:
+      'A smart agriculture-based web application designed to assist farmers in making better cultivation decisions using data-driven insights. The system helps monitor crop conditions, provides recommendations, and improves productivity through efficient resource management.',
+    image: require('./cultivation.png'),
+    tech: ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS'],
+    github: 'https://github.com/Chirubathula06/smart-cultivation-system',
+    live: 'https://smart-cultivation.kesug.com/smart_cultivation_system/',
+    category: '💻 Full Stack'
+  }
+];
+  const filteredProjects =
+  activeProjectCategory === 'All'
+    ? projects
+    : projects.filter(
+        (project) => project.category === activeProjectCategory
+      );
 const certificates = {
   cryptography: [
     {
@@ -363,12 +505,13 @@ if (loading) {
   {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
 </div>
           <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
-            <li><a onClick={() => scrollToSection('home')}>Home</a></li>
-            <li><a onClick={() => scrollToSection('about')}>About</a></li>
-            <li><a onClick={() => scrollToSection('skills')}>Skills</a></li>
-            <li><a onClick={() => scrollToSection('projects')}>Projects</a></li>
-            <li><a onClick={() => scrollToSection('certifications')}>Certifications</a></li>
-            <li><a onClick={() => scrollToSection('contact')}>Contact</a></li>
+             <li><button className="nav-link-btn" onClick={() => scrollToSection('home')}>Home</button></li>
+<li><button className="nav-link-btn" onClick={() => scrollToSection('about')}>About</button></li>
+<li><button className="nav-link-btn" onClick={() => scrollToSection('skills')}>Skills</button></li>
+<li><button className="nav-link-btn" onClick={() => scrollToSection('experience')}>Experience</button></li>
+<li><button className="nav-link-btn" onClick={() => scrollToSection('projects')}>Projects</button></li>
+<li><button className="nav-link-btn" onClick={() => scrollToSection('certifications')}>Certifications</button></li>
+<li><button className="nav-link-btn" onClick={() => scrollToSection('contact')}>Contact</button></li>
           </ul>
         </div>
       </nav>
@@ -393,7 +536,9 @@ if (loading) {
               <span className="typed-cursor">{typedText}</span>
               <span className="cursor">|</span>
             </div>
-            <p>Full Stack Developer building real-world web applications with React & PHP — exploring AI to create smarter, impactful digital solutions.</p>
+            <p>
+  AI Automation & GenAI Developer building intelligent workflows, RAG systems, and full-stack SaaS applications with modern AI technologies.
+</p>
             <div className="btn-group">
   <button className="btn btn-primary" onClick={() => scrollToSection('contact')}>
     Hire Me
@@ -426,16 +571,17 @@ if (loading) {
           <div className="about-content">
             <div className="about-text">
               <h3>Who Am I?</h3>
+
 <p>
-I'm a passionate Full Stack Developer and BTech Computer Science student who enjoys building real-world web applications that solve meaningful problems. I specialize in developing dynamic and scalable solutions using React, PHP, and MySQL.
+I'm a passionate AI Automation & Full Stack Developer and BTech Computer Science student who enjoys building real-world AI applications, automation workflows, and scalable web platforms that solve meaningful problems.
 </p>
 
 <p>
-I have hands-on experience creating projects like an Income Tax Management System and a Leave Management System, focusing on both functionality and user experience. I'm also exploring Artificial Intelligence to expand my skill set and build smarter, future-ready applications.
+I have hands-on experience developing full-stack SaaS applications, RAG-based AI systems, AI agents, and workflow automations using technologies like React, Next.js, OpenAI API, n8n, Supabase, and MySQL.
 </p>
 
 <p>
-Driven by curiosity and innovation, I continuously learn new technologies and aim to grow as a developer while working towards becoming a tech entrepreneur.
+Currently, I’m working as an AI Automation & GenAI Intern at DeepDrishti.ai, building AI agents, automation workflows, and real-world AI solutions while continuously learning and exploring modern AI technologies.
 </p>
               <div className="stats">
                 <div className="stat-card">
@@ -467,350 +613,301 @@ Driven by curiosity and innovation, I continuously learn new technologies and ai
 </div>
 
 <div className="education-card" style={{ backgroundColor: darkMode ? '#2d2d2d' : '#f5f5f5' }}>
-  <h3 style={{ color: darkMode ? '#667eea' : '#333' }}>💼 What I Do</h3>
+  <h3 style={{ color: darkMode ? '#667eea' : '#333' }}>🚀 What I Do</h3>
+
   <p style={{ color: darkMode ? '#ccc' : '#666', lineHeight: '1.8' }}>
-    ✓ Create end-to-end web applications from concept to deployment<br />
-    ✓ Convert complex requirements into simple, functional solutions<br />
-    ✓ Design modern, responsive, and user-centric interfaces<br />
-    ✓ Build robust backend systems with efficient data handling<br />
-    ✓ Apply problem-solving skills to develop optimized solutions<br />
-    ✓ Continuously learn and evolve towards AI-powered development
+    ✓ Build full-stack web applications and AI-powered SaaS products<br />
+    ✓ Develop AI automation workflows using n8n and OpenAI APIs<br />
+    ✓ Create RAG-based AI systems with semantic search and embeddings<br />
+    ✓ Design modern, responsive, and user-friendly interfaces<br />
+    ✓ Integrate authentication, databases, and real-time AI features<br />
+    ✓ Transform real-world ideas into scalable AI-driven solutions
   </p>
-</div>            </div>
+</div>           </div>
           </div>
         </div>
       </section>
 
-      {/* Skills Section */}
+{/* Skills Section */}
 <section id="skills" className="skills">
   <div className="container">
     <h2 className="section-title">Technical Skills</h2>
-{/* Skills Summary Badges */}
-<div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem', justifyContent: 'center' }}>
-    <span style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '0.5rem 1.2rem', borderRadius: '25px', fontSize: '0.9rem' }}>C</span>
-    <span style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '0.5rem 1.2rem', borderRadius: '25px', fontSize: '0.9rem' }}>Java</span>
-    <span style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '0.5rem 1.2rem', borderRadius: '25px', fontSize: '0.9rem' }}>Python</span>
-    <span style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '0.5rem 1.2rem', borderRadius: '25px', fontSize: '0.9rem' }}>HTML5/CSS3</span>
-    <span style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '0.5rem 1.2rem', borderRadius: '25px', fontSize: '0.9rem' }}>JavaScript</span>
-    <span style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '0.5rem 1.2rem', borderRadius: '25px', fontSize: '0.9rem' }}>React.js</span>
-    <span style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '0.5rem 1.2rem', borderRadius: '25px', fontSize: '0.9rem' }}>Node.js</span>
-    <span style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '0.5rem 1.2rem', borderRadius: '25px', fontSize: '0.9rem' }}>PHP</span>
-    <span style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '0.5rem 1.2rem', borderRadius: '25px', fontSize: '0.9rem' }}>MySQL</span>
-    <span style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '0.5rem 1.2rem', borderRadius: '25px', fontSize: '0.9rem' }}>Git/GitHub</span>
-    <span style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '0.5rem 1.2rem', borderRadius: '25px', fontSize: '0.9rem' }}>DSA</span>
-    <span style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '0.5rem 1.2rem', borderRadius: '25px', fontSize: '0.9rem' }}>OOP</span>
-    <span style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '0.5rem 1.2rem', borderRadius: '25px', fontSize: '0.9rem' }}>DBMS</span>
-    <span style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', padding: '0.5rem 1.2rem', borderRadius: '25px', fontSize: '0.9rem' }}>OS</span>
-  </div>
-</div>
+
+    {/* Skills Summary Badges */}
+    <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem', justifyContent: 'center' }}>
+        {[
+          'C',
+          'Java',
+          'Python',
+          'HTML5/CSS3',
+          'JavaScript',
+          'React.js',
+          'Next.js',
+          'TypeScript',
+          'Tailwind CSS',
+          'PHP',
+          'MySQL',
+          'PostgreSQL',
+          'Supabase',
+          'OpenAI API',
+          'n8n',
+          'RAG',
+          'Git/GitHub',
+          'DSA',
+          'OOP',
+          'DBMS'
+        ].map((skill, i) => (
+          <span
+            key={i}
+            style={{
+              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              color: 'white',
+              padding: '0.5rem 1.2rem',
+              borderRadius: '25px',
+              fontSize: '0.9rem'
+            }}
+          >
+            {skill}
+          </span>
+        ))}
+      </div>
+    </div>
+
     <div className="skills-grid">
-      
+
       {/* Programming Languages */}
       <div className="skill-category">
         <h3>💻 Programming Languages</h3>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">⚡</span>
-            <span>C</span>
+
+        {[
+          ['⚡', 'C', '85%'],
+          ['☕', 'Java', '80%'],
+          ['🐍', 'Python', '85%'],
+          ['📜', 'JavaScript', '85%'],
+          ['📘', 'TypeScript', '75%']
+        ].map(([icon, name, level], i) => (
+          <div className="skill-item" key={i}>
+            <div className="skill-info">
+              <span className="skill-icon">{icon}</span>
+              <span>{name}</span>
+            </div>
+
+            <div className="skill-bar">
+              <motion.div
+                className="skill-progress"
+                initial={{ width: 0 }}
+                whileInView={{ width: level }}
+                transition={{ duration: 1 }}
+              />
+            </div>
           </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "85%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">☕</span>
-            <span>Java</span>
-          </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "80%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">🐍</span>
-            <span>Python</span>
-          </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "85%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
+        ))}
       </div>
 
-      {/* Web Technologies */}
+      {/* Web Development */}
       <div className="skill-category">
-        <h3>🌐 Web Technologies</h3>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">📄</span>
-            <span>HTML5/CSS3</span>
+        <h3>🌐 Web Development</h3>
+
+        {[
+          ['📄', 'HTML5/CSS3', '90%'],
+          ['⚛️', 'React.js', '85%'],
+          ['▲', 'Next.js', '80%'],
+          ['🎨', 'Tailwind CSS', '85%'],
+          ['🐘', 'PHP', '75%']
+        ].map(([icon, name, level], i) => (
+          <div className="skill-item" key={i}>
+            <div className="skill-info">
+              <span className="skill-icon">{icon}</span>
+              <span>{name}</span>
+            </div>
+
+            <div className="skill-bar">
+              <motion.div
+                className="skill-progress"
+                initial={{ width: 0 }}
+                whileInView={{ width: level }}
+                transition={{ duration: 1 }}
+              />
+            </div>
           </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "90%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">📜</span>
-            <span>JavaScript</span>
-          </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "85%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">⚛️</span>
-            <span>React.js</span>
-          </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "80%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">🟢</span>
-            <span>Node.js</span>
-          </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "75%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">🐘</span>
-            <span>PHP</span>
-          </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "70%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
+        ))}
       </div>
 
-      {/* Databases */}
+      {/* AI & Automation */}
       <div className="skill-category">
-        <h3>🗄️ Databases</h3>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">🐬</span>
-            <span>MySQL</span>
+        <h3>🤖 AI & Automation</h3>
+
+        {[
+          ['🧠', 'OpenAI API', '85%'],
+          ['⚡', 'n8n Workflow Automation', '85%'],
+          ['📚', 'RAG Systems', '80%'],
+          ['🤖', 'AI Agents', '80%'],
+          ['💬', 'Prompt Engineering', '80%']
+        ].map(([icon, name, level], i) => (
+          <div className="skill-item" key={i}>
+            <div className="skill-info">
+              <span className="skill-icon">{icon}</span>
+              <span>{name}</span>
+            </div>
+
+            <div className="skill-bar">
+              <motion.div
+                className="skill-progress"
+                initial={{ width: 0 }}
+                whileInView={{ width: level }}
+                transition={{ duration: 1 }}
+              />
+            </div>
           </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "85%" }}
-              transition={{ duration: 1 }}
-            />
+        ))}
+      </div>
+
+      {/* Databases & Backend */}
+      <div className="skill-category">
+        <h3>🗄️ Databases & Backend</h3>
+
+        {[
+          ['🐬', 'MySQL', '85%'],
+          ['🐘', 'PostgreSQL', '75%'],
+          ['🟢', 'Supabase', '80%'],
+          ['🔐', 'Authentication & Security', '75%'],
+          ['🔗', 'API Integration', '80%']
+        ].map(([icon, name, level], i) => (
+          <div className="skill-item" key={i}>
+            <div className="skill-info">
+              <span className="skill-icon">{icon}</span>
+              <span>{name}</span>
+            </div>
+
+            <div className="skill-bar">
+              <motion.div
+                className="skill-progress"
+                initial={{ width: 0 }}
+                whileInView={{ width: level }}
+                transition={{ duration: 1 }}
+              />
+            </div>
           </div>
-        </div>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">📊</span>
-            <span>Database Design</span>
-          </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "80%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">🔍</span>
-            <span>Querying</span>
-          </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "85%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
+        ))}
       </div>
 
       {/* Tools & Platforms */}
       <div className="skill-category">
         <h3>🛠️ Tools & Platforms</h3>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">⎇</span>
-            <span>Git</span>
+
+        {[
+          ['🐙', 'Git & GitHub', '85%'],
+          ['📝', 'VS Code', '90%'],
+          ['☁️', 'Vercel', '75%'],
+          ['📦', 'npm', '80%'],
+          ['🧩', 'API Integration', '80%']
+        ].map(([icon, name, level], i) => (
+          <div className="skill-item" key={i}>
+            <div className="skill-info">
+              <span className="skill-icon">{icon}</span>
+              <span>{name}</span>
+            </div>
+
+            <div className="skill-bar">
+              <motion.div
+                className="skill-progress"
+                initial={{ width: 0 }}
+                whileInView={{ width: level }}
+                transition={{ duration: 1 }}
+              />
+            </div>
           </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "85%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">🐙</span>
-            <span>GitHub</span>
-          </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "85%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">📝</span>
-            <span>VS Code</span>
-          </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "90%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">🗄️</span>
-            <span>XAMPP</span>
-          </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "80%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">💾</span>
-            <span>MySQL Workbench</span>
-          </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "85%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
+        ))}
       </div>
 
       {/* Core Concepts */}
       <div className="skill-category">
         <h3>📚 Core Concepts</h3>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">🔄</span>
-            <span>Data Structures & Algorithms</span>
+
+        {[
+          ['🔄', 'Data Structures & Algorithms', '80%'],
+          ['🎯', 'Object-Oriented Programming', '85%'],
+          ['🗃️', 'DBMS', '85%'],
+          ['🧠', 'Problem Solving', '85%'],
+          ['⚙️', 'Software Development', '80%']
+        ].map(([icon, name, level], i) => (
+          <div className="skill-item" key={i}>
+            <div className="skill-info">
+              <span className="skill-icon">{icon}</span>
+              <span>{name}</span>
+            </div>
+
+            <div className="skill-bar">
+              <motion.div
+                className="skill-progress"
+                initial={{ width: 0 }}
+                whileInView={{ width: level }}
+                transition={{ duration: 1 }}
+              />
+            </div>
           </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "80%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">🎯</span>
-            <span>Object-Oriented Programming</span>
-          </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "85%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">🗃️</span>
-            <span>DBMS</span>
-          </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "85%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
-        <div className="skill-item">
-          <div className="skill-info">
-            <span className="skill-icon">⚙️</span>
-            <span>Operating Systems</span>
-          </div>
-          <div className="skill-bar">
-            <motion.div 
-              className="skill-progress" 
-              initial={{ width: 0 }}
-              whileInView={{ width: "75%" }}
-              transition={{ duration: 1 }}
-            />
-          </div>
-        </div>
+        ))}
       </div>
 
+    </div>
+  </div>
+</section>
+{/* Experience Section */}
+<section id="experience" className="experience">
+  <div className="container">
+    <h2 className="section-title">Experience</h2>
+
+    <div className="experience-card">
+      <div className="experience-header">
+        <div>
+          <h3>AI Automation & GenAI Intern</h3>
+          <h4>DeepDrishti.ai</h4>
+        </div>
+        <span className="experience-date">May 2026 – Present</span>
+      </div>
+
+      <p className="experience-desc">
+        Currently working on real-world AI automation, GenAI applications, RAG systems, AI agents, and full-stack AI SaaS products using modern AI and web technologies.
+      </p>
+
+      <ul className="experience-list">
+        <li>
+          Built AI automation workflows using n8n, OpenAI APIs, and AI agents for practical business use cases.
+        </li>
+        <li>
+          Developed RAG-based AI systems using embeddings, semantic search, vector databases, and context-aware response generation.
+        </li>
+        <li>
+          Designed and developed AI Startup Launchpad, a full-stack SaaS MVP for founders with authentication, project management, AI-generated startup plans, and generation history.
+        </li>
+        <li>
+          Integrated OpenAI API through protected Next.js API routes and stored authenticated user data securely in Supabase with Row Level Security.
+        </li>
+        <li>
+          Currently working on an AI Prior-Art Discovery Engine that uses embeddings, vector databases, RAG architecture, and knowledge graphs to enable semantic patent search, similar patent detection, novelty scoring, and claim overlap analysis.
+        </li>
+      </ul>
+
+      <div className="experience-tech">
+        {[
+          'n8n',
+          'OpenAI API',
+          'GPT-4o mini',
+          'RAG',
+          'AI Agents',
+          'Vector Databases',
+          'Knowledge Graphs',
+          'Next.js',
+          'React',
+          'TypeScript',
+          'Tailwind CSS',
+          'Supabase',
+          'PostgreSQL'
+        ].map((tech, i) => (
+          <span key={i} className="tech-tag">{tech}</span>
+        ))}
+      </div>
     </div>
   </div>
 </section>
@@ -818,8 +915,21 @@ Driven by curiosity and innovation, I continuously learn new technologies and ai
       <section id="projects" className="projects">
         <div className="container">
           <h2 className="section-title">Featured Projects</h2>
+          <div className="project-categories">
+  {['All', '🚀 GenAI SaaS', '🤖 RAG / GenAI', '⚡ AI Automation', '💻 Full Stack'].map((category) => (
+    <button
+      key={category}
+      className={`category-btn ${
+        activeProjectCategory === category ? 'active' : ''
+      }`}
+      onClick={() => setActiveProjectCategory(category)}
+    >
+      {category}
+    </button>
+  ))}
+</div>
           <div className="projects-grid">
-            {projects.map((project, idx) => (
+            {filteredProjects.map((project, idx) => (
               <motion.div 
                 key={idx}
                 className="project-card"
@@ -830,6 +940,9 @@ Driven by curiosity and innovation, I continuously learn new technologies and ai
               >
                 <img src={project.image} alt={project.title} className="project-img" />
                 <div className="project-content">
+                  <span className="project-category-badge">
+    {project.category}
+  </span>
                   <h3 className="project-title">{project.title}</h3>
                   <p className="project-desc">{project.description}</p>
                   <div className="project-tech">
@@ -838,9 +951,24 @@ Driven by curiosity and innovation, I continuously learn new technologies and ai
                     ))}
                   </div>
                   <div className="project-links">
-                    <a href={project.github} className="project-link">GitHub →</a>
-                    <a href={project.live} className="project-link">Live Demo →</a>
-                  </div>
+  {project.github && (
+    <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
+      GitHub →
+    </a>
+  )}
+
+  {project.live && (
+    <a href={project.live} target="_blank" rel="noopener noreferrer" className="project-link">
+      Live Demo →
+    </a>
+  )}
+
+  {project.demo && (
+    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link">
+      Watch Demo →
+    </a>
+  )}
+</div>
                 </div>
               </motion.div>
             ))}
