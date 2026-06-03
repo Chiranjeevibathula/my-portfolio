@@ -37,6 +37,8 @@ import cert13 from './certificates/cert13.jpeg';
 import cert14 from './certificates/cert14.jpeg';
 import cert15 from './certificates/cert15.jpeg';
 import cert16 from './certificates/cert16.jpeg';
+import cert17 from './certificates/cert17.jpeg';
+import cert18 from './certificates/cert18.jpeg';
 
 const roles = [
   "AI Automation & GenAI Developer",
@@ -382,7 +384,7 @@ const certificates = {
       skills: ['Cybersecurity', 'Network Security', 'Risk Management', 'Threat Analysis']
     }
   ],
-  aiPromptEngineering: [
+  aiMl: [
     {
       id: 6,
       title: 'Introduction to Prompt Engineering',
@@ -400,7 +402,23 @@ const certificates = {
       description: 'Explored the fundamentals of ChatGPT, including its applications, capabilities, and usage in real-world scenarios for automation and content generation.',
       image: cert8,
       skills: ['ChatGPT', 'AI Tools', 'Automation', 'Generative AI']
-    }
+    },
+    {
+  id: 17,
+  title: 'Natural Language Processing',
+  issuer: 'NPTEL - IIT Kharagpur',
+  date: 'Apr 2026',
+  image: cert17,
+  description: 'Successfully completed the NPTEL Natural Language Processing course, gaining knowledge of text processing, language modeling, machine learning techniques, and modern NLP concepts.',
+  skills: [
+    'Natural Language Processing',
+    'Artificial Intelligence',
+    'Machine Learning',
+    'Text Processing',
+    'Language Models'
+  ],
+  credentialLink: 'https://storage.googleapis.com/2026-mar-halltickets/certificate-generation-apr26/final/regular/noc26-cs45/NOC26CS45S105020168204227715.pdf?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcs-cert-signer%40nptel-exam.iam.gserviceaccount.com%2F20260602%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260602T063931Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=94ca67273640d194ee71509e3197614b2c07343615a4abe43aae0aab2d197709cb7ed43895e6486fd3d17d0b3796dd6dd2d6a6e79fbe1c2000fffcb900c6a3f9d71a478c0eb500ed6d0037c89880876ba600a2b0ff48687f7b315eec3e03ace361195d9ad2fd8034cf924677ddbd88aa8eb614d48d1e450ac779ca82bc277ef82c168c8f0c6431c8ed6d0403dcb1efc33a3ad5c06325a908d301d3ed8d79e695068d6dcff6c61c9dd904d47b484ca15a148497a2419ddc2a4ceeb6c6bcae7946dd52a787fcf84ebafd760d0f62967014a7e2acfd4fd1327be16272be038230152e143d352e1b9196bd7d480418bb5378efefbecffabc5d52382e8c74b67bdcad'
+}
   ],
   problemSolvingCore: [
     {
@@ -482,7 +500,24 @@ const certificates = {
       description: 'Awarded merit scholarship for outstanding academic performance, securing second position among students across multiple branches for the academic year 2024–25.',
       image: cert16,
       skills: ['Academic Excellence', 'Consistency', 'Discipline', 'Performance']
-    }
+    },
+    {
+  id: 18,
+  title: 'All India NCAT 2026',
+  issuer: 'Naukri Campus',
+  date: 'Jun 2026',
+  image: cert18,
+  description:
+    'Successfully participated in the All India NCAT 2026 (Naukri Campus Aptitude Test), demonstrating aptitude, logical reasoning, problem-solving, and analytical thinking skills.',
+  skills: [
+    'Aptitude',
+    'Logical Reasoning',
+    'Problem Solving',
+    'Analytical Thinking',
+    'Career Assessment'
+  ],
+  credentialLink: 'https://www.naukri.com/campus/certificates/nc_ai_ncat_participation_may_2026/v0/6a1995fe542fee52d1240175?utm_source=certificate&utm_medium=copy&utm_campaign=6a1995fe542fee52d1240175'
+}
   ]
 };
 if (loading) {
@@ -995,10 +1030,10 @@ Currently, I’m working as an AI Automation & GenAI Intern at DeepDrishti.ai, b
     🛡️ Cybersecurity
   </button>
   <button 
-    className={`category-tab ${activeCategory === 'aiPromptEngineering' ? 'active' : ''}`}
-    onClick={() => setActiveCategory('aiPromptEngineering')}
+    className={`category-tab ${activeCategory === 'aiMl' ? 'active' : ''}`}
+    onClick={() => setActiveCategory('aiMl')}
   >
-    🤖 AI & Prompt Engineering
+    🤖 AI & Machine Learning
   </button>
   <button 
     className={`category-tab ${activeCategory === 'problemSolvingCore' ? 'active' : ''}`}
