@@ -1,12 +1,16 @@
 {
   "files": {
-    "main.css": "/my-portfolio/static/css/main.06256c2a.css",
-    "main.js": "/my-portfolio/static/js/main.d29547ed.js",
+    "main.css": "/my-portfolio/static/css/main.316aa3e6.css",
+    "main.js": "/my-portfolio/static/js/main.cf014c15.js",
     "static/media/income.png": "/my-portfolio/static/media/income.adb700e6a27a1ac6d6e0.png",
+    "static/media/gateBadge.png": "/my-portfolio/static/media/gateBadge.31d0a990dce0dae5b999.png",
     "static/media/cert9.png": "/my-portfolio/static/media/cert9.edd94f375cde8604ab1f.png",
+    "static/media/ai-prior-art-discovery-engine.png": "/my-portfolio/static/media/ai-prior-art-discovery-engine.b81b6bc0b5e79d5f1a18.png",
     "static/media/ai-startup-launchpad.png": "/my-portfolio/static/media/ai-startup-launchpad.b55d166f6b8a9c80c9af.png",
+    "static/media/cert21.png": "/my-portfolio/static/media/cert21.a87029ed28dc5ec7d826.png",
     "static/media/leave.png": "/my-portfolio/static/media/leave.52f3bc4f9ec47f34b7df.png",
     "static/media/cultivation.png": "/my-portfolio/static/media/cultivation.b56d34cd7dd5b08e9d88.png",
+    "static/media/rankforge-ai.png": "/my-portfolio/static/media/rankforge-ai.1cda0c81e8009709865b.png",
     "static/media/cert14.jpeg": "/my-portfolio/static/media/cert14.9830a7183ae5e1d015f1.jpeg",
     "static/media/cert13.jpeg": "/my-portfolio/static/media/cert13.636e29f003105ec4aa30.jpeg",
     "static/media/complaint.png": "/my-portfolio/static/media/complaint.e42c83380e381e6845d2.png",
@@ -22,21 +26,25 @@
     "static/media/cert16.jpeg": "/my-portfolio/static/media/cert16.f74481f8aab8a9dce191.jpeg",
     "static/media/cert10.png": "/my-portfolio/static/media/cert10.c48ca6c57a1781ee633e.png",
     "static/media/cert15.jpeg": "/my-portfolio/static/media/cert15.036bd13a8bf5a3979f40.jpeg",
+    "static/media/ai-prompt-vault.jpeg": "/my-portfolio/static/media/ai-prompt-vault.23d232c7acc7d5da72d7.jpeg",
+    "static/media/opportunity-os.jpeg": "/my-portfolio/static/media/opportunity-os.e24a04aec8f67152cbf6.jpeg",
     "static/media/website-rag-chatbot.png": "/my-portfolio/static/media/website-rag-chatbot.e7075329d91b31c8d21d.png",
     "static/media/cert8.png": "/my-portfolio/static/media/cert8.f8ccad6c7c46ebfaf8f8.png",
     "static/media/profile.jpeg": "/my-portfolio/static/media/profile.f5f3e3a1dfd422ea6718.jpeg",
-    "static/media/RESUME.pdf": "/my-portfolio/static/media/RESUME.d79df7042c1b9714efad.pdf",
+    "static/media/RESUME.pdf": "/my-portfolio/static/media/RESUME.cd0d81cfbc6a4908c6a7.pdf",
+    "static/media/cert19.png": "/my-portfolio/static/media/cert19.70428dc809bb3d087cb0.png",
     "static/media/cert7.png": "/my-portfolio/static/media/cert7.cbd4d9d71c131a3e5b56.png",
+    "static/media/cert20.png": "/my-portfolio/static/media/cert20.537c1ab9e184edde852e.png",
     "static/media/rag-ai-assistant.png": "/my-portfolio/static/media/rag-ai-assistant.8df6421acd20ee185e45.png",
     "static/media/youtube-learning-assistant.png": "/my-portfolio/static/media/youtube-learning-assistant.16e3573ad2df69e35dfa.png",
     "static/media/ai-email-assistant.png": "/my-portfolio/static/media/ai-email-assistant.2d3b0744246646fb26e6.png",
     "static/media/telegram-ai-bot.png": "/my-portfolio/static/media/telegram-ai-bot.5d17e9863d2fe5cefe16.png",
     "index.html": "/my-portfolio/index.html",
-    "main.06256c2a.css.map": "/my-portfolio/static/css/main.06256c2a.css.map",
-    "main.d29547ed.js.map": "/my-portfolio/static/js/main.d29547ed.js.map"
+    "main.316aa3e6.css.map": "/my-portfolio/static/css/main.316aa3e6.css.map",
+    "main.cf014c15.js.map": "/my-portfolio/static/js/main.cf014c15.js.map"
   },
   "entrypoints": [
-    "static/css/main.06256c2a.css",
-    "static/js/main.d29547ed.js"
+    "static/css/main.316aa3e6.css",
+    "static/js/main.cf014c15.js"
   ]
 }
