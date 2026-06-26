@@ -216,6 +216,31 @@ function App() {
       category: '🧠 AI Search & Ranking'
     },
     {
+  title: 'CodeLens AI',
+  description: 'An AI-powered GitHub Repository Engineering Auditor that analyzes public repositories using OpenAI and the GitHub API. CodeLens AI evaluates architecture, security, performance, maintainability, documentation quality, engineering practices, and recruiter readiness to generate comprehensive AI-powered audit reports. It also supports repository comparison, engineering checklist detection, downloadable TXT/PDF reports, and interactive score visualizations through a modern full-stack dashboard.',
+  image: require('./codelens-ai.jpeg'),
+  tech: [
+    'React.js',
+    'Vite',
+    'FastAPI',
+    'Python',
+    'OpenAI API',
+    'GitHub REST API',
+    'JavaScript',
+    'HTML',
+    'CSS',
+    'AI Repository Analysis',
+    'Software Architecture Review',
+    'Engineering Audit',
+    'Repository Comparison',
+    'LLM',
+    'PDF Reports'
+  ],
+  github: 'https://github.com/Chiranjeevibathula/codelens-ai-github-reviewer',
+  live: 'https://codelens-ai-github-reviewer.vercel.app',
+  category: '🧠 AI Search & Ranking'
+},
+    {
       title: 'Opportunity OS',
       description: 'Built a full-stack AI-powered mobile application that helps students, developers, researchers, founders, and professionals discover verified scholarships, internships, hackathons, fellowships, grants, startup programs, research opportunities, and government benefits. Features AI-based opportunity matching, trust scoring, personalized recommendations, opportunity tracking, secure authentication, and Supabase-powered backend infrastructure.',
       image: require('./opportunity-os.jpeg'),
