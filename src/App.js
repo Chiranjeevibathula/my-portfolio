@@ -533,41 +533,94 @@ function App() {
           </div>
         </div>
       </section>
-
+      
       <section id="skills" className="skills">
-        <div className="container">
-          <h2 className="section-title">Technical Skills</h2>
+  <div className="container">
+    <h2 className="section-title">Technical Skills</h2>
 
-          <div className="skills-summary">
-            {['C', 'Java', 'Python', 'HTML5/CSS3', 'JavaScript', 'React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'PHP', 'MySQL', 'PostgreSQL', 'Supabase', 'OpenAI API', 'n8n', 'RAG', 'Git/GitHub', 'DSA', 'OOP', 'DBMS'].map((skill) => (
-              <span key={skill}>{skill}</span>
-            ))}
-          </div>
+    <div className="skills-summary">
+      {[
+        'Python', 'Java', 'C', 'JavaScript', 'TypeScript',
+        'React.js', 'Next.js', 'FastAPI', 'Tailwind CSS',
+        'OpenAI API', 'RAG', 'AI Agents', 'n8n',
+        'Qdrant', 'Supabase', 'PostgreSQL', 'Git/GitHub', 'Docker'
+      ].map((skill) => (
+        <span key={skill}>{skill}</span>
+      ))}
+    </div>
 
-          <div className="skills-grid">
-            {[
-              ['💻 Programming Languages', [['⚡', 'C', '85%'], ['☕', 'Java', '80%'], ['🐍', 'Python', '85%'], ['📜', 'JavaScript', '85%'], ['📘', 'TypeScript', '75%']]],
-              ['🌐 Web Development', [['📄', 'HTML5/CSS3', '90%'], ['⚛️', 'React.js', '85%'], ['▲', 'Next.js', '80%'], ['🎨', 'Tailwind CSS', '85%'], ['🐘', 'PHP', '75%']]],
-              ['🤖 AI & Automation', [['🧠', 'OpenAI API', '85%'], ['⚡', 'n8n Workflow Automation', '85%'], ['📚', 'RAG Systems', '80%'], ['🤖', 'AI Agents', '80%'], ['💬', 'Prompt Engineering', '80%']]],
-              ['🗄️ Databases & Backend', [['🐬', 'MySQL', '85%'], ['🐘', 'PostgreSQL', '75%'], ['🟢', 'Supabase', '80%'], ['🔐', 'Authentication & Security', '75%'], ['🔗', 'API Integration', '80%']]],
-              ['🛠️ Tools & Platforms', [['🐙', 'Git & GitHub', '85%'], ['📝', 'VS Code', '90%'], ['☁️', 'Vercel', '75%'], ['📦', 'npm', '80%'], ['🧩', 'API Integration', '80%']]],
-              ['📚 Core Concepts', [['🔄', 'Data Structures & Algorithms', '80%'], ['🎯', 'Object-Oriented Programming', '85%'], ['🗃️', 'DBMS', '85%'], ['🧠', 'Problem Solving', '85%'], ['⚙️', 'Software Development', '80%']]]
-            ].map(([title, items]) => (
-              <div className="skill-category" key={title}>
-                <h3>{title}</h3>
-                {items.map(([icon, name, level]) => (
-                  <div className="skill-item" key={name}>
-                    <div className="skill-info"><span className="skill-icon">{icon}</span><span>{name}</span></div>
-                    <div className="skill-bar">
-                      <motion.div className="skill-progress" initial={{ width: 0 }} whileInView={{ width: level }} transition={{ duration: 1 }} />
-                    </div>
-                  </div>
-                ))}
+    <div className="skills-grid">
+      {[
+        ['🤖 Generative AI & LLMs', [
+          ['🧠', 'OpenAI API', '90%'],
+          ['📚', 'RAG Systems', '90%'],
+          ['🤖', 'AI Agents', '85%'],
+          ['💬', 'Prompt Engineering', '90%'],
+          ['🔎', 'Semantic Search', '85%']
+        ]],
+        ['⚡ AI Automation', [
+          ['⚙️', 'n8n Workflow Automation', '90%'],
+          ['🔗', 'API Integration', '90%'],
+          ['🌐', 'REST APIs', '85%'],
+          ['📨', 'AI Workflow Design', '85%'],
+          ['🚀', 'Business Automation', '80%']
+        ]],
+        ['💻 Full-Stack Development', [
+          ['⚛️', 'React.js', '90%'],
+          ['▲', 'Next.js', '85%'],
+          ['🐍', 'FastAPI', '85%'],
+          ['🎨', 'Tailwind CSS', '85%'],
+          ['📱', 'React Native & Expo', '80%']
+        ]],
+        ['🗄️ Databases & Vector Search', [
+          ['🟢', 'Supabase', '85%'],
+          ['🐘', 'PostgreSQL', '80%'],
+          ['🐬', 'MySQL', '85%'],
+          ['🔍', 'Qdrant Vector DB', '85%'],
+          ['📦', 'Embeddings', '85%']
+        ]],
+        ['👨‍💻 Programming Languages', [
+          ['🐍', 'Python', '90%'],
+          ['📜', 'JavaScript', '85%'],
+          ['📘', 'TypeScript', '80%'],
+          ['☕', 'Java', '80%'],
+          ['⚡', 'C', '80%']
+        ]],
+        ['🛠️ Tools & Core Concepts', [
+          ['🐙', 'Git & GitHub', '90%'],
+          ['🐳', 'Docker', '80%'],
+          ['🧩', 'Problem Solving', '90%'],
+          ['🔄', 'DSA', '85%'],
+          ['🗃️', 'DBMS & OOP', '85%']
+        ]]
+      ].map(([title, items]) => (
+        <div className="skill-category" key={title}>
+          <h3>{title}</h3>
+
+          {items.map(([icon, name, level]) => (
+            <div className="skill-item" key={name}>
+              <div className="skill-info">
+                <span className="skill-icon">{icon}</span>
+                <span>{name}</span>
               </div>
-            ))}
-          </div>
+
+              <div className="skill-bar">
+                <motion.div
+                  className="skill-progress"
+                  initial={{ width: '0%' }}
+                  whileInView={{ width: level }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, ease: 'easeOut' }}
+                />
+              </div>
+            </div>
+          ))}
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+    
 
       <section id="experience" className="experience">
         <div className="container">
